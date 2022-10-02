@@ -1,4 +1,4 @@
-FROM btpanel/baota:lnmp
+FROM pch18/baota
 
 ENV HOME /root
 
