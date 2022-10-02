@@ -1,4 +1,4 @@
-FROM cyberbolt/baota
+FROM btpanel/baota:lnmp
 
 WORKDIR /app
 ENTRYPOINT ["python3","script.py"]
