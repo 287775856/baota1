@@ -1,0 +1,19 @@
+build:
+  api:
+    context: api
+  frontend:
+    context: frontend
+    dockerfile: Dockerfile
+    target: dev
+deploy:
+  - helm upgrade --install movies chart --set api.image=${OKTETO_BUILD_API_IMAGE} --set frontend.image=${OKTETO_BUILD_FRONTEND_IMAGE}
+dev:
+  api:
+    command: ["bash"]
+    forward:
+      - 8888:8888
+      - 80:80
+    
+  frontend:
+    command: bt default
+   
